@@ -1,12 +1,7 @@
-import { defineConfig } from 'umi';
-import { Platform, Arch } from '../';
+import { defineConfig } from "umi";
 
 export default defineConfig({
-  npmClient: 'yarn',
-  plugins: [require.resolve('../')],
-  electron: {
-    builder: {
-      targets: Platform.MAC.createTarget(['dmg'], Arch.arm64),
-    },
-  },
+  npmClient: "npm",
+  plugins: ["@umijs/plugin-electron"],
+  electron: {},
 });
